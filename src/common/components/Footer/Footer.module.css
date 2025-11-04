@@ -1,0 +1,41 @@
+.footer {
+    padding: 20px 20px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.text {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+}
+
+.social a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.social a:hover {
+    color: #000;
+}

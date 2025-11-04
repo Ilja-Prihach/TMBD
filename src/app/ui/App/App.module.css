@@ -1,4 +1,12 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .layout {
   max-width: 1186px;
-  margin: 0 auto 200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex: 1; /* Главное - это свойство заставляет контент растягиваться */
 }
