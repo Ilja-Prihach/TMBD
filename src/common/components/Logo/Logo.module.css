@@ -1,0 +1,32 @@
+.logoLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.logoLink:hover {
+    opacity: 0.8;
+}
+
+.logo {
+    width: auto;
+    transition: transform 0.2s ease;
+}
+
+.logoLink:hover .logo {
+    transform: scale(1.05);
+}
+
+/* Размеры */
+.small {
+    height: 25px;
+}
+
+.medium {
+    height: 35px;
+}
+
+.large {
+    height: 50px;
+}
