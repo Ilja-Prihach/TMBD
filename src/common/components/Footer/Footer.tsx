@@ -8,7 +8,9 @@ export const Footer = () => {
             <div className={s.container}>
                 <div className={s.main}>
                     <Logo size="small" />
-                    <p className={s.text}>
+                </div>
+                <div className={s.text}>
+                    <p>
                         © 2025 Kinopoisk Demo · Data courtesy of TMDB.
                     </p>
                 </div>

@@ -1,7 +1,8 @@
 .footer {
     padding: 20px 20px;
-    border-top: 1px solid #e0e0e0;
-    background-color: #f8f9fa;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--footer-bg);
+    transition: all 0.3s ease;
 }
 
 .container {
@@ -21,7 +22,7 @@
 
 .text {
     margin: 0;
-    color: #666;
+    color: var(--text-secondary);
     font-size: 14px;
 }
 
@@ -31,11 +32,12 @@
 }
 
 .social a {
-    color: #666;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 14px;
+    transition: color 0.3s ease;
 }
 
 .social a:hover {
-    color: #000;
+    color: var(--primary-color);
 }

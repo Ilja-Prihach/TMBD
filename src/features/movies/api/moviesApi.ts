@@ -1,19 +1,30 @@
-import type { PlaylistsResponse } from '@/features/movies/api/playlistsApi.types.ts'
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const moviesApi = createApi({
-  reducerPath: 'playlistsApi',
+  reducerPath: 'moviesApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_BASE_URL,
-    headers: {
-      'API-KEY': import.meta.env.VITE_API_KEY,
+    baseUrl: 'https://api.themoviedb.org/3/',
+    prepareHeaders: (headers) => {
+      headers.set('Authorization', `Bearer ${process.env.REACT_APP_TMDB_TOKEN}`);
+      return headers;
     },
   }),
-  endpoints: (build) => ({
-    fetchPlaylists: build.query<PlaylistsResponse, void>({
-      query: () => 'playlists',
+  endpoints: (builder) => ({
+    getPopularMovies: builder.query({
+      query: (page = 1) => `movie/popular?page=${page}`,
+    }),
+    searchMovies: builder.query({
+      query: ({ query, page = 1 }) => `search/movie?query=${query}&page=${page}`,
+    }),
+    getTopRated: builder.query({
+      query: (page = 1) => `movie/top_rated?page=${page}`,
+    }),
+    getUpcoming: builder.query({
+      query: (page = 1) => `movie/upcoming?page=${page}`,
+    }),
+    getNowPlaying: builder.query({
+      query: (page = 1) => `movie/now_playing?page=${page}`,
     }),
   }),
-})
+});
 
-export const { useFetchPlaylistsQuery } = moviesApi
+export const {useGetPopularMoviesQuery, useSearchMoviesQuery, useGetTopRatedQuery, useGetUpcomingQuery, useGetNowPlayingQuery} = moviesApi;

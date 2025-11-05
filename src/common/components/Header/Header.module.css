@@ -1,12 +1,14 @@
+
 .container {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--border-color);
   padding: 20px 100px;
+  background-color: var(--header-bg);
 }
 
 nav {
   display: flex;
   align-items: center;
-  gap: 40px; /* Расстояние между лого и меню */
+  gap: 40px;
 }
 
 .list {
@@ -15,8 +17,35 @@ nav {
   list-style: none;
   margin: 0;
   padding: 0;
+  flex: 1;
 }
 
 .activeLink {
   font-weight: bold;
+  color: var(--primary-color);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--primary-color);
+}
+
+.themeToggle {
+  background: var(--button-bg);
+  border: 1px solid var(--border-color);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.themeToggle:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--primary-color);
 }

@@ -1,4 +1,4 @@
-import { store } from '@/app/model/store.ts'
+import { store } from '@/app/model/store/store.ts'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { Provider } from 'react-redux'
