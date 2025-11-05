@@ -1,46 +1,69 @@
-import type { CurrentUserReaction } from '@/common/enums'
-import type { Images, Tag, User } from '@/common/types'
-
-export type PlaylistsResponse = {
-  data: PlaylistData[]
-  meta: PlaylistMeta
+// src/features/movies/types/movie.types.ts
+export interface Movie {
+  id: number;
+  title: string;
+  poster_path: string | null;
+  backdrop_path: string | null;
+  overview: string;
+  release_date: string;
+  vote_average: number;
+  vote_count: number;
+  genre_ids: number[];
+  popularity: number;
+  adult: boolean;
+  video: boolean;
+  original_language: string;
+  original_title: string;
 }
 
-export type PlaylistData = {
-  id: string
-  type: 'playlists'
-  attributes: PlaylistAttributes
+export interface MoviesResponse {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
 }
 
-export type PlaylistMeta = {
-  page: number
-  pageSize: number
-  totalCount: number
-  pagesCount: number
+export interface MovieDetails extends Movie {
+  genres: Genre[];
+  runtime: number;
+  status: string;
+  tagline: string;
+  budget: number;
+  revenue: number;
+  production_companies: ProductionCompany[];
 }
 
-export type PlaylistAttributes = {
-  title: string
-  description: string
-  addedAt: string
-  updatedAt: string
-  order: number
-  dislikesCount: number
-  likesCount: number
-  tags: Tag[]
-  images: Images
-  user: User
-  currentUserReaction: CurrentUserReaction
+export interface Genre {
+  id: number;
+  name: string;
 }
 
-// Arguments
-export type FetchPlaylistsArgs = {
-  pageNumber?: number
-  pageSize?: number
-  search?: string
-  sortBy?: 'addedAt' | 'likesCount'
-  sortDirection?: 'asc' | 'desc'
-  tagsIds?: string[]
-  userId?: string
-  trackId?: string
+export interface ProductionCompany {
+  id: number;
+  name: string;
+  logo_path: string | null;
+  origin_country: string;
+}
+
+export interface Cast {
+  id: number;
+  name: string;
+  character: string;
+  credit_id: string;
+  order: number;
+  profile_path: string | null;
+}
+
+export interface Crew {
+  id: number;
+  name: string;
+  job: string;
+  credit_id: string;
+  department: string;
+  profile_path: string | null;
+}
+
+export interface Credits {
+  cast: Cast[];
+  crew: Crew[];
 }
