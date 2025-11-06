@@ -1,4 +1,4 @@
-// src/utils/image.utils.ts
+
 import { apiConfig } from '@/config/api.config';
 
 export const imageUrls = {
