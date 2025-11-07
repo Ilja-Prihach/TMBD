@@ -1,5 +1,5 @@
 .section {
-    margin-bottom: 60px;
+    margin: 60px 0;
 }
 
 .header {
@@ -34,8 +34,8 @@
 
 .moviesGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(6, 1fr);;
+    gap: 16px;
 }
 
 .skeletonCard {

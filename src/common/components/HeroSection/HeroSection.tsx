@@ -1,15 +1,13 @@
-import {useNavigate} from "react-router";
+
 import {useGetPopularMoviesQuery} from "@/features/movies/api/moviesApi.ts";
 import {useEffect, useState} from "react";
 import {imageUrls} from "@/utils/image.utils.ts";
 import s from "./HeroSection.module.css"
+import {SearchBox} from "@/common/components/SearchBox/SearchBox.tsx";
 
 export const HeroSection = () => {
-
-    const navigate = useNavigate();
     const { data: popularMovies } = useGetPopularMoviesQuery(1);
-    const [searchQuery, setSearchQuery] = useState('');
-    const [randomBackdrop, setRandomBackdrop] = useState<string>('');
+    const [randomBackdrop, setRandomBackdrop] = useState('');
 
     useEffect(() => {
         if (popularMovies?.results) {
@@ -22,17 +20,6 @@ export const HeroSection = () => {
             }
         }
     }, [popularMovies]);
-
-    const handleSearch = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (searchQuery.trim()) {
-            navigate(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
-        }
-    };
-
-    const isSearchDisabled = !searchQuery.trim();
-
-
 
     return (
         <section
@@ -50,24 +37,9 @@ export const HeroSection = () => {
                         Discover millions of movies, TV shows and people. Explore now.
                     </p>
 
-                    <form onSubmit={handleSearch} className={s.searchForm}>
-                        <div className={s.searchBox}>
-                            <input
-                                type="text"
-                                placeholder="Search for a movie..."
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                className={s.searchInput}
-                            />
-                            <button
-                                type="submit"
-                                disabled={isSearchDisabled}
-                                className={s.searchButton}
-                            >
-                                Search
-                            </button>
-                        </div>
-                    </form>
+                    <SearchBox
+                        placeholder="Search for a movie..."
+                    />
                 </div>
             </div>
         </section>

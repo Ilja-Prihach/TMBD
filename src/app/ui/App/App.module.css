@@ -5,7 +5,7 @@
 }
 
 .layout {
-  max-width: 1186px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   flex: 1; /* Главное - это свойство заставляет контент растягиваться */
