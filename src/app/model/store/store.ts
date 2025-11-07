@@ -3,11 +3,13 @@ import { moviesApi } from '@/features/movies/api/moviesApi.ts'
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import themeReducer from './theme/theme.slice'
+import favoritesReducer from "@/app/model/store/favorites/favoritesSlice.ts";
 
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
+    favorites: favoritesReducer,
     [moviesApi.reducerPath]: moviesApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

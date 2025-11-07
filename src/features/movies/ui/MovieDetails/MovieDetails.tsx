@@ -47,8 +47,10 @@ export const MovieDetails = () => {
                         {movie.genres && (
                             <p><strong>Genres:</strong> {movie.genres.map((g: { id: number; name: string }) => g.name).join(', ')}</p>
                         )}
-                        {movie.budget && (
+                        {movie.budget > 0 ? (
                             <p><strong>Budget:</strong> ${movie.budget.toLocaleString()}</p>
+                        ) : (
+                            <p><strong>Budget:</strong> The budget is unknown</p>
                         )}
                     </div>
                 </div>

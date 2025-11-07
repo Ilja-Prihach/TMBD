@@ -2,6 +2,7 @@
 import {useNavigate} from "react-router";
 import {imageUrls} from "@/utils/image.utils.ts";
 import s from "./MovieCard.module.css"
+import {useFavorites} from "@/utils/useFavorites.ts";
 
 type Movie = {
     id: number;
@@ -17,6 +18,7 @@ type MovieCardProps = {
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
     const navigate = useNavigate();
+    const {toggleFavorite, isFavorite} = useFavorites()
 
     const handleClick = () => {
         navigate(`/movie/${movie.id}`);
@@ -24,7 +26,15 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 
     const handleFavoriteClick = (e: React.MouseEvent) => {
         e.stopPropagation();
-        console.log('Add to favorites:', movie.id);
+        const favoriteMovie = {
+            id: movie.id,
+            title: movie.title,
+            poster_path: movie.poster_path,
+            vote_average: movie.vote_average,
+            release_date: movie.release_date,
+        };
+
+        toggleFavorite(favoriteMovie);
     };
 
     const getRatingColor = (rating: number) => {
@@ -33,7 +43,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
         return '#e50914';
     };
 
-    const getYear = (releaseDate: string) => {
+    const getYear = (releaseDate?: string) => {
         return releaseDate ? new Date(releaseDate).getFullYear() : 'TBA';
     };
 
@@ -65,9 +75,12 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
                 <button
                     className={s.favoriteButton}
                     onClick={handleFavoriteClick}
-                    aria-label="Add to favorites"
+                    aria-label={isFavorite(movie.id) ? "Remove from favorites" : "Add to favorites"}
+                    style={{
+                        background: isFavorite(movie.id) ? 'var(--primary-color)' : 'rgba(0, 0, 0, 0.7)'
+                    }}
                 >
-                    ❤️
+                    {isFavorite(movie.id) ? '❤️' : '♡'}
                 </button>
             </div>
 
