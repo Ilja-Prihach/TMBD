@@ -15,7 +15,7 @@ type MovieCardProps = {
     movie: Movie;
 };
 
-export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
+export const MovieCard = ({ movie }: MovieCardProps) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -37,15 +37,23 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         return releaseDate ? new Date(releaseDate).getFullYear() : 'TBA';
     };
 
+    const getPosterUrl = (): string => {
+        if (!movie.poster_path) {
+            // Если постера нет, используем placeholder с информацией о фильме
+            return `https://placehold.co/342x500/2d2d2d/ffffff?text=No+Poster&font=montserrat`;
+        }
+        return imageUrls.poster(movie.poster_path, 'w342');
+    };
+
     return (
         <div className={s.card} onClick={handleClick}>
             <div className={s.posterContainer}>
                 <img
-                    src={imageUrls.poster(movie.poster_path, 'w342')}
+                    src={getPosterUrl()}
                     alt={movie.title}
                     className={s.poster}
                     onError={(e) => {
-                        e.currentTarget.src = '/placeholder-poster.jpg';
+                        e.currentTarget.src = 'https://placehold.co/342x500/2d2d2d/ffffff?text=Error+Loading&font=montserrat';
                     }}
                 />
                 <div
@@ -59,7 +67,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
                     onClick={handleFavoriteClick}
                     aria-label="Add to favorites"
                 >
-                    ♡
+                    ❤️
                 </button>
             </div>
 
