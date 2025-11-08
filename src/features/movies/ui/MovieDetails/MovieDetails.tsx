@@ -3,6 +3,7 @@ import {useGetMovieCreditsQuery, useGetMovieDetailsQuery} from '@/features/movie
 import s from './MovieDetails.module.css';
 import {useParams} from "react-router";
 import {CastSection} from "@/features/movies/ui/MovieDetails/CastSection/CastSection.tsx";
+import {BackButton} from "@/common/components/BackButton/BackButton.tsx";
 
 export const MovieDetails = () => {
     const { id } = useParams<{ id: string }>();
@@ -21,6 +22,7 @@ export const MovieDetails = () => {
 
     return (
         <div className={s.container}>
+            <BackButton/>
             <div className={s.movieHeader}>
                 <h1 className={s.title}>{movie.title}</h1>
                 {movie.tagline && <p className={s.tagline}>{movie.tagline}</p>}

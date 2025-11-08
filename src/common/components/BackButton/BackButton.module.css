@@ -1,0 +1,18 @@
+
+.backButton {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.backButton:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
