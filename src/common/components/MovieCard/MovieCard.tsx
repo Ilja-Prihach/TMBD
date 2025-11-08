@@ -49,7 +49,6 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 
     const getPosterUrl = (): string => {
         if (!movie.poster_path) {
-            // Если постера нет, используем placeholder с информацией о фильме
             return `https://placehold.co/342x500/2d2d2d/ffffff?text=No+Poster&font=montserrat`;
         }
         return imageUrls.poster(movie.poster_path, 'w342');
@@ -76,9 +75,6 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
                     className={s.favoriteButton}
                     onClick={handleFavoriteClick}
                     aria-label={isFavorite(movie.id) ? "Remove from favorites" : "Add to favorites"}
-                    style={{
-                        background: isFavorite(movie.id) ? 'var(--primary-color)' : 'rgba(0, 0, 0, 0.7)'
-                    }}
                 >
                     {isFavorite(movie.id) ? '❤️' : '♡'}
                 </button>

@@ -1,7 +1,7 @@
 // src/features/movies/api/moviesApi.ts
 import { createApi } from '@reduxjs/toolkit/query/react';
 import {baseQuery} from "@/app/api/base-api.ts";
-import type {MoviesResponse} from "@/features/movies/api/moviesApi.types.ts";
+import type {Genre, MoviesResponse} from "@/features/movies/api/moviesApi.types.ts";
 
 
 
@@ -46,6 +46,30 @@ export const moviesApi = createApi({
     getSimilarMovies: builder.query({
       query: (id: number) => `movie/${id}/similar`,
     }),
+
+    getFilteredMovies: builder.query<MoviesResponse, {
+      page?: number;
+      sort_by?: string;
+      'vote_average.gte'?: number;
+      'vote_average.lte'?: number;
+      with_genres?: string;
+    }>({
+      query: (filters = {}) => {
+        const params = new URLSearchParams();
+
+        Object.entries(filters).forEach(([key, value]) => {
+          if (value !== undefined && value !== null && value !== '') {
+            params.append(key, value.toString())
+          }
+        })
+        return `discover/movie?${params.toString()}`;
+      },
+      providesTags: ['Movies']
+    }),
+
+    getGenres: builder.query<{genres: Genre[]}, void>({
+      query: () => 'genre/movie/list'
+    })
   }),
 });
 
@@ -58,4 +82,6 @@ export const {
   useGetMovieDetailsQuery,
   useGetMovieCreditsQuery,
   useGetSimilarMoviesQuery,
+  useGetFilteredMoviesQuery,
+  useGetGenresQuery
 } = moviesApi;

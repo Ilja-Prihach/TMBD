@@ -1,4 +1,4 @@
-// src/features/movies/types/movie.types.ts
+
 export interface Movie {
   id: number;
   title: string;
@@ -67,3 +67,4 @@ export interface Credits {
   cast: Cast[];
   crew: Crew[];
 }
+

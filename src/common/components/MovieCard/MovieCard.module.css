@@ -60,8 +60,8 @@
 }
 
 .favoriteButton:hover {
-    background: var(--primary-color);
-    transform: scale(1.1);
+    /*background: var(--primary-color);*/
+    transform: scale(1.2);
 }
 
 .info {
