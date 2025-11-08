@@ -1,9 +1,14 @@
 
-import {useGetMovieCreditsQuery, useGetMovieDetailsQuery} from '@/features/movies/api/moviesApi.ts';
+import {
+    useGetMovieCreditsQuery,
+    useGetMovieDetailsQuery,
+    useGetSimilarMoviesQuery
+} from '@/features/movies/api/moviesApi.ts';
 import s from './MovieDetails.module.css';
 import {useParams} from "react-router";
 import {CastSection} from "@/features/movies/ui/MovieDetails/CastSection/CastSection.tsx";
 import {BackButton} from "@/common/components/BackButton/BackButton.tsx";
+import {SimilarMovies} from "@/features/movies/ui/MovieDetails/SimilarMovies/SimilarMovies.tsx";
 
 export const MovieDetails = () => {
     const { id } = useParams<{ id: string }>();
@@ -11,6 +16,7 @@ export const MovieDetails = () => {
 
     const { data: movie, isLoading, isError } = useGetMovieDetailsQuery(movieId);
     const { data: credits, isLoading: isCreditsLoading } = useGetMovieCreditsQuery(movieId);
+    const { data: similarMovies, isLoading: isSimilarLoading } = useGetSimilarMoviesQuery(movieId);
 
     if (isLoading) {
         return <div className={s.loading}>Loading movie details...</div>;
@@ -62,6 +68,10 @@ export const MovieDetails = () => {
 
             {!isCreditsLoading && credits && credits.cast && (
                 <CastSection cast={credits.cast} />
+            )}
+
+            {!isSimilarLoading && similarMovies && similarMovies.results && (
+                <SimilarMovies movies={similarMovies.results} />
             )}
 
         </div>
