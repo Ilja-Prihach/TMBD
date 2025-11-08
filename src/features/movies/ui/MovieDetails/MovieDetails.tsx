@@ -1,13 +1,15 @@
 
-import { useGetMovieDetailsQuery } from '@/features/movies/api/moviesApi.ts';
+import {useGetMovieCreditsQuery, useGetMovieDetailsQuery} from '@/features/movies/api/moviesApi.ts';
 import s from './MovieDetails.module.css';
 import {useParams} from "react-router";
+import {CastSection} from "@/features/movies/ui/MovieDetails/CastSection/CastSection.tsx";
 
 export const MovieDetails = () => {
     const { id } = useParams<{ id: string }>();
     const movieId = Number(id);
 
     const { data: movie, isLoading, isError } = useGetMovieDetailsQuery(movieId);
+    const { data: credits, isLoading: isCreditsLoading } = useGetMovieCreditsQuery(movieId);
 
     if (isLoading) {
         return <div className={s.loading}>Loading movie details...</div>;
@@ -55,6 +57,11 @@ export const MovieDetails = () => {
                     </div>
                 </div>
             </div>
+
+            {!isCreditsLoading && credits && credits.cast && (
+                <CastSection cast={credits.cast} />
+            )}
+
         </div>
     );
 };
