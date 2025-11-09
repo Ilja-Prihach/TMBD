@@ -9,6 +9,7 @@ import {useParams} from "react-router";
 import {CastSection} from "@/features/movies/ui/MovieDetails/CastSection/CastSection.tsx";
 import {BackButton} from "@/common/components/BackButton/BackButton.tsx";
 import {SimilarMovies} from "@/features/movies/ui/MovieDetails/SimilarMovies/SimilarMovies.tsx";
+import {MovieInfo} from "@/features/movies/ui/MovieDetails/MovieInfo/MovieInfo.tsx";
 
 export const MovieDetails = () => {
     const { id } = useParams<{ id: string }>();
@@ -29,42 +30,8 @@ export const MovieDetails = () => {
     return (
         <div className={s.container}>
             <BackButton/>
-            <div className={s.movieHeader}>
-                <h1 className={s.title}>{movie.title}</h1>
-                {movie.tagline && <p className={s.tagline}>{movie.tagline}</p>}
-            </div>
 
-            <div className={s.movieContent}>
-                <div className={s.posterSection}>
-                    <img
-                        src={movie.poster_path
-                            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                            : 'https://placehold.co/500x750/2d2d2d/ffffff?text=No+Poster'
-                        }
-                        alt={movie.title}
-                        className={s.poster}
-                    />
-                </div>
-
-                <div className={s.detailsSection}>
-                    <div className={s.rating}>
-                        <p>Rating: {movie.vote_average.toFixed(1)}/10</p>
-                    </div>
-                    <p className={s.overview}>{movie.overview}</p>
-                    <div className={s.metaInfo}>
-                        <p><strong>Release Date:</strong> {movie.release_date}</p>
-                        <p><strong>Runtime:</strong> {movie.runtime} minutes</p>
-                        {movie.genres && (
-                            <p><strong>Genres:</strong> {movie.genres.map((g: { id: number; name: string }) => g.name).join(', ')}</p>
-                        )}
-                        {movie.budget > 0 ? (
-                            <p><strong>Budget:</strong> ${movie.budget.toLocaleString()}</p>
-                        ) : (
-                            <p><strong>Budget:</strong> The budget is unknown</p>
-                        )}
-                    </div>
-                </div>
-            </div>
+            <MovieInfo movie={movie} />
 
             {!isCreditsLoading && credits && credits.cast && (
                 <CastSection cast={credits.cast} />
@@ -73,7 +40,6 @@ export const MovieDetails = () => {
             {!isSimilarLoading && similarMovies && similarMovies.results && (
                 <SimilarMovies movies={similarMovies.results} />
             )}
-
         </div>
     );
 };
