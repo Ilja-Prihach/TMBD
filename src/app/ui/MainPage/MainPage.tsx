@@ -1,9 +1,17 @@
 import {HeroSection} from "@/common/components/HeroSection/HeroSection.tsx";
 import {MoviesSection} from "@/common/components/MoviesSection/MoviesSection.tsx";
 import s from "./MainPage.module.css"
+import {useFirstLoad} from "@/common/hooks/useFirstLoad.ts";
+import {MainPageSkeleton} from "@/common/components/MainPageSkeleton/MainPageSkeleton.tsx";
 
 
 export const MainPage = () => {
+    const isFirstLoad = useFirstLoad();
+
+
+    if (isFirstLoad) {
+        return <MainPageSkeleton />;
+    }
 
 
 

@@ -6,6 +6,7 @@ import {store} from "@/app/model/store/store.ts";
 import {Provider} from "react-redux";
 import {ThemeProvider} from "@/app/model/store/theme/providers/ThemeProvider.tsx";
 import {GlobalLoader} from "@/common/components/LinearProgress/GlobalLoader.tsx";
+import { ToastContainer } from 'react-toastify';
 
 export const App = () => {
     return (
@@ -18,8 +19,21 @@ export const App = () => {
                         <Routing />
                     </main>
                     <Footer />
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="colored"
+                    />
                 </div>
             </ThemeProvider>
+
         </Provider>
     )
 }
