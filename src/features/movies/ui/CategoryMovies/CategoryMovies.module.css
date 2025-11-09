@@ -1,0 +1,25 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 80vh;
+}
+
+.loading, .error, .noResults {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+.noResults h3 {
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.moviesGrid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 32px;
+}

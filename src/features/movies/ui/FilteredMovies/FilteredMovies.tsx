@@ -3,8 +3,9 @@ import { useState } from 'react';
 import { useGetFilteredMoviesQuery } from '@/features/movies/api/moviesApi';
 import s from './FilteredMovies.module.css';
 import {type FilterState, MovieFilters} from "@/common/components/MovieFilters/MovieFilters.tsx";
-import {MoviesPagination} from "@/features/movies/ui/FilteredMovies/MoviesPagination/MoviesPagination.tsx";
+
 import {MoviesResults} from "@/features/movies/ui/FilteredMovies/MoviesResults/MoviesResults.tsx";
+import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 
 
 
@@ -25,7 +26,7 @@ export const FilteredMovies = () => {
     });
 
     const handleFiltersChange = (newFilters: FilterState) => {
-        setFilters({ ...newFilters, page: 1 }); // Сбрасываем на первую страницу при изменении фильтров
+        setFilters({ ...newFilters, page: 1 });
     };
 
     const handlePageChange = (newPage: number) => {
@@ -46,7 +47,7 @@ export const FilteredMovies = () => {
                     <MovieFilters onFiltersChange={handleFiltersChange} />
                 </aside>
 
-                {/* Блок результатов */}
+
                 <main className={s.results}>
                     <MoviesResults
                         movies={movies}
@@ -54,8 +55,7 @@ export const FilteredMovies = () => {
                         isError={isError}
                     />
 
-                    {/* Пагинация */}
-                    <MoviesPagination
+                    <Pagination
                         currentPage={filters.page}
                         totalPages={totalPages}
                         onPageChange={handlePageChange}
