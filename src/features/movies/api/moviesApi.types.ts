@@ -23,48 +23,14 @@ export interface MoviesResponse {
   total_results: number;
 }
 
-export interface MovieDetails extends Movie {
-  genres: Genre[];
-  runtime: number;
-  status: string;
-  tagline: string;
-  budget: number;
-  revenue: number;
-  production_companies: ProductionCompany[];
-}
 
 export interface Genre {
   id: number;
   name: string;
 }
 
-export interface ProductionCompany {
-  id: number;
-  name: string;
-  logo_path: string | null;
-  origin_country: string;
-}
 
-export interface Cast {
-  id: number;
-  name: string;
-  character: string;
-  credit_id: string;
-  order: number;
-  profile_path: string | null;
-}
 
-export interface Crew {
-  id: number;
-  name: string;
-  job: string;
-  credit_id: string;
-  department: string;
-  profile_path: string | null;
-}
 
-export interface Credits {
-  cast: Cast[];
-  crew: Crew[];
-}
+
 
