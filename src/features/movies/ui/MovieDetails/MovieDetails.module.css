@@ -11,3 +11,10 @@
     font-size: 18px;
     color: var(--text-secondary);
 }
+
+.backButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}

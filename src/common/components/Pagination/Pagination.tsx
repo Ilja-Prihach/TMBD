@@ -1,5 +1,6 @@
 
 import s from './Pagination.module.css';
+import {Button} from "@/common/components/BackButton/Button.tsx";
 
 interface PaginationProps {
     currentPage: number;
@@ -43,13 +44,14 @@ export const Pagination = ({
 
     return (
         <div className={s.pagination}>
-            <button
-                className={s.paginationButton}
+            <Button
+                variant="primary"
+                size="medium"
                 disabled={currentPage <= 1}
                 onClick={() => onPageChange(currentPage - 1)}
             >
                 Previous
-            </button>
+            </Button>
 
             <div className={s.pageNumbers}>
                 {getPageNumbers().map((page, index) => (
@@ -71,13 +73,14 @@ export const Pagination = ({
                 ))}
             </div>
 
-            <button
-                className={s.paginationButton}
+            <Button
+                variant="primary"
+                size="medium"
                 disabled={currentPage >= totalPages}
                 onClick={() => onPageChange(currentPage + 1)}
             >
                 Next
-            </button>
+            </Button>
         </div>
     );
 };
