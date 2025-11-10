@@ -1,5 +1,5 @@
 
-import { imageUrls } from '@/utils/image.utils';
+import { imageUrls } from '@/common/utils/image.utils.ts';
 import s from './CastSection.module.css';
 
 type CastMember = {

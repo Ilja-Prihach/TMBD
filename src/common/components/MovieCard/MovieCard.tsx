@@ -1,8 +1,9 @@
 
 import {useNavigate} from "react-router";
-import {imageUrls} from "@/utils/image.utils.ts";
+
 import s from "./MovieCard.module.css"
-import {useFavorites} from "@/utils/useFavorites.ts";
+import {useFavorites} from "@/common/hooks/useFavorites.ts";
+import {imageUrls} from "@/common/utils/image.utils.ts";
 
 type Movie = {
     id: number;

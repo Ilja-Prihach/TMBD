@@ -1,10 +1,11 @@
 import s from './MoviesSection.module.css';
 import {MovieCard} from "@/common/components/MovieCard/MovieCard.tsx";
 import {useNavigate} from "react-router";
-import {sectionConfig} from "@/utils/moviesSectionConfig.ts";
+
 import {Button} from "@/common/components/BackButton/Button.tsx";
 import {MovieCardSkeleton} from "@/common/components/MovieCardSkeleton/MovieCardSkeleton.tsx";
 import {useMoviesSectionData} from "@/common/hooks/useMoviesSectionData.ts";
+import {sectionConfig} from "@/common/utils/moviesSectionConfig.ts";
 
 type MoviesSectionProps = {
     category: 'popular' | 'top_rated' | 'upcoming' | 'now_playing';

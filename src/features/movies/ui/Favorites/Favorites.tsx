@@ -1,6 +1,7 @@
-import {useFavorites} from "@/utils/useFavorites.ts";
+
 import {MovieCard} from "@/common/components/MovieCard/MovieCard.tsx";
 import s from "./Favorites.module.css"
+import {useFavorites} from "@/common/hooks/useFavorites.ts";
 
 export const Favorites = () => {
     const { favorites } = useFavorites();

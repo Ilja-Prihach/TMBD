@@ -1,5 +1,5 @@
 
-import { apiConfig } from '@/config/api.config';
+import { apiConfig } from '@/config/api.config.ts';
 
 export const imageUrls = {
     poster: (path: string | null, size: 'w154' | 'w342' | 'w500' | 'w780' | 'original' = 'w342') =>

@@ -1,7 +1,7 @@
 
 import {useGetPopularMoviesQuery} from "@/features/movies/api/moviesApi.ts";
 import {useEffect, useState} from "react";
-import {imageUrls} from "@/utils/image.utils.ts";
+import {imageUrls} from "@/common/utils/image.utils.ts";
 import s from "./HeroSection.module.css"
 import {SearchBox} from "@/common/components/SearchBox/SearchBox.tsx";
 
