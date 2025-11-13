@@ -19,7 +19,7 @@
 
 .moviesGrid {
     display: grid;
-    grid-template-columns: repeat(6, minmax(180px, 1fr));
+    grid-template-columns: repeat(5, minmax(180px, 1fr));
     gap: 15px;
     margin-bottom: 32px;
 }
