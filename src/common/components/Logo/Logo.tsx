@@ -2,20 +2,20 @@ import s from './Logo.module.css'
 import { NavLink } from 'react-router'
 import {Path} from "@/common/routing";
 
-interface LogoProps {
+type LogoProps = {
     size?: 'small' | 'medium' | 'large'
     className?: string
 }
 
 export const Logo = ({ size = 'medium', className = '' }: LogoProps) => {
-    const logoClass = `${s.logo} ${s[size]} ${className}`
+    const logoLinkClass = `${s.logoLink} ${className}`
 
     return (
-        <NavLink to={Path.Main} className={s.logoLink}>
+        <NavLink to={Path.Main} className={logoLinkClass}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 273.42 35.52"
-                className={logoClass}
+                className={`${s.logo} ${s[size]}`}
             >
                 <defs>
                     <linearGradient id="linear-gradient" y1="17.76" x2="273.42" y2="17.76" gradientUnits="userSpaceOnUse">

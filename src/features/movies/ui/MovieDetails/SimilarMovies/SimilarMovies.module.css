@@ -3,7 +3,7 @@
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 20px;
@@ -13,4 +13,75 @@
     display: grid;
     grid-template-columns: repeat(6, minmax(180px, 1fr));
     gap: 15px;
+}
+
+@media (max-width: 1200px) {
+    .moviesGrid {
+        grid-template-columns: repeat(4, minmax(160px, 1fr));
+        gap: 14px;
+    }
+}
+
+@media (max-width: 991px) {
+    .similarSection {
+        margin: 35px 0;
+    }
+
+    .title {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+        gap: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .similarSection {
+        margin: 30px 0;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(3, minmax(130px, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .similarSection {
+        margin: 25px 0;
+    }
+
+    .title {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .similarSection {
+        margin: 20px 0;
+    }
+
+    .title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(2, minmax(110px, 1fr));
+        gap: 8px;
+    }
 }

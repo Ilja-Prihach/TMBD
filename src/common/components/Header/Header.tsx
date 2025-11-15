@@ -5,7 +5,7 @@ import {Logo} from "@/common/components/Logo/Logo.tsx";
 import {useAppDispatch, useAppSelector} from "@/app/model/store/hooks.ts";
 import {selectIsDark, toggleTheme} from "@/app/model/store/theme/theme.slice.ts";
 import {BurgerMenu} from "@/common/components/BurgerMenu/BurgerMenu.tsx";
-
+import { useState, useEffect } from 'react';
 
 const navItems = [
   { to: Path.Main, label: 'Main' },
@@ -18,6 +18,16 @@ const navItems = [
 export const Header = () => {
   const dispatch = useAppDispatch()
   const isDark = useAppSelector(selectIsDark)
+  const [logoSize, setLogoSize] = useState<'small' | 'medium'>('medium')
+
+  useEffect(() => {
+    const handleResize = () => {
+      setLogoSize(window.innerWidth <= 575 ? 'small' : 'medium')
+    }
+    handleResize() //
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const handleThemeToggle = () => {
     dispatch(toggleTheme())
@@ -26,7 +36,7 @@ export const Header = () => {
   return (
       <header className={s.container}>
         <nav>
-          <Logo size="medium" />
+          <Logo size={logoSize} />
 
           <ul className={s.list}>
             {navItems.map((item) => (
@@ -50,7 +60,6 @@ export const Header = () => {
               {isDark ? '☀️' : '🌙'}
             </button>
 
-            {/* Burger Menu */}
             <BurgerMenu />
           </div>
         </nav>

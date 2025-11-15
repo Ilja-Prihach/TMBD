@@ -1,11 +1,10 @@
-
 .movieHeader {
     margin-bottom: 40px;
     text-align: center;
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 10px;
@@ -13,7 +12,7 @@
 }
 
 .tagline {
-    font-size: 1.25rem;
+    font-size: 20px;
     color: var(--text-secondary);
     font-style: italic;
     margin: 0;
@@ -46,9 +45,9 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    color: white; /* Белый текст всегда виден на цветном фоне */
+    color: white;
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 18px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -60,7 +59,7 @@
 
 .metaInfo p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 16px;
     color: var(--text-primary);
 }
 
@@ -70,15 +69,149 @@
 }
 
 .overview h3 {
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 12px;
 }
 
 .overview p {
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.6;
     color: var(--text-primary);
     margin: 0;
+}
+
+@media (max-width: 991px) {
+    .movieHeader {
+        margin-bottom: 30px;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+
+    .movieContent {
+        grid-template-columns: 350px 1fr;
+        gap: 30px;
+    }
+
+    .rating {
+        width: 55px;
+        height: 55px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .movieHeader {
+        margin-bottom: 25px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .movieContent {
+        grid-template-columns: 300px 1fr;
+        gap: 25px;
+    }
+
+    .rating {
+        width: 50px;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .overview h3 {
+        font-size: 18px;
+    }
+
+    .overview p,
+    .metaInfo p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 675px) {
+    .movieContent {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .poster {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .detailsSection {
+        align-items: center;
+    }
+
+    .rating {
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 575px) {
+    .movieHeader {
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    .poster {
+        max-width: 250px;
+    }
+
+    .detailsSection {
+        gap: 20px;
+    }
+
+    .rating {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .overview h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .overview p,
+    .metaInfo p {
+        font-size: 14px;
+    }
+
+    .metaInfo {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .title {
+        font-size: 22px;
+    }
+
+    .poster {
+        max-width: 220px;
+    }
 }
