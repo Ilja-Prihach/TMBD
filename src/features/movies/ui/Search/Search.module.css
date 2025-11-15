@@ -1,7 +1,14 @@
 .searchInput {
-    font-size: 16px;
+    font-size: 16px !important;
+    transform: scale(1);
+    max-height: 44px;
 }
 
+.searchButton {
+    font-size: 16px !important;
+    min-height: 44px;
+    touch-action: manipulation;
+}
 
 .container {
     max-width: 1200px;
