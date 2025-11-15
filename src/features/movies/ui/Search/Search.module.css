@@ -55,7 +55,7 @@
     }
 
     .resultsGrid {
-        grid-template-columns: repeat(3, minmax(160px, 1fr));
+        grid-template-columns: repeat(3, minmax(160px, 180px));
         gap: 16px;
         margin-top: 28px;
     }
@@ -81,7 +81,7 @@
     }
 
     .resultsGrid {
-        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, minmax(150px, 170px));
         gap: 16px;
         margin-top: 24px;
     }
@@ -107,7 +107,7 @@
     }
 
     .resultsGrid {
-        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        grid-template-columns: repeat(2, minmax(140px, 160px));
         gap: 12px;
         margin-top: 20px;
     }

@@ -13,7 +13,7 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100vw; /* Фон на всю ширину экрана */
+    width: 100vw;
     height: 100%;
     background-size: cover;
     background-position: center;
