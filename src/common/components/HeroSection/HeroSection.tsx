@@ -22,14 +22,19 @@ export const HeroSection = () => {
     }, [popularMovies]);
 
     return (
-        <section
-            className={s.hero}
-            style={{
-                backgroundImage: randomBackdrop
+        <section className={s.hero}>
+
+            <style>
+                {`
+                    .${s.hero}::before {
+                        background-image: ${randomBackdrop
                     ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${randomBackdrop})`
                     : 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))'
-            }}
-        >
+                };
+                    }
+                `}
+            </style>
+
             <div className={s.container}>
                 <div className={s.content}>
                     <h1 className={s.title}>Welcome to MovieDB</h1>

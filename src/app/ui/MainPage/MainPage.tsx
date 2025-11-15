@@ -16,14 +16,14 @@ export const MainPage = () => {
 
 
     return (
-        <section>
-          <HeroSection/>
-            <div className={s.section}>
+        <div className={s.home}>
+            <HeroSection/>
+            <div className={s.sections}>
                 <MoviesSection category="popular" />
                 <MoviesSection category="top_rated" />
                 <MoviesSection category="upcoming" />
                 <MoviesSection category="now_playing" />
             </div>
-        </section>
+        </div>
     )
 }
