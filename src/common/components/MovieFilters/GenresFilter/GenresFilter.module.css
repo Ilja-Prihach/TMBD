@@ -61,3 +61,45 @@
     border-color: var(--primary-color);
     transform: translateY(-1px);
 }
+
+@media (max-width: 768px) {
+    .filterGroup {
+        margin-bottom: 20px;
+    }
+
+    .label {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .genres {
+        max-height: 150px;
+        gap: 6px;
+    }
+
+    .genreButton {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 575px) {
+    .filterGroup {
+        margin-bottom: 18px;
+    }
+
+    .label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .genres {
+        max-height: 120px;
+        gap: 4px;
+    }
+
+    .genreButton {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}

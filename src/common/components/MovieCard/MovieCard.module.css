@@ -60,7 +60,6 @@
 }
 
 .favoriteButton:hover {
-    /*background: var(--primary-color);*/
     transform: scale(1.2);
 }
 
@@ -84,4 +83,98 @@
     font-size: 0.875rem;
     color: var(--text-secondary);
     margin: 0;
+}
+
+@media (max-width: 1200px) {
+    .poster {
+        height: 280px;
+    }
+}
+
+@media (max-width: 991px) {
+    .poster {
+        height: 260px;
+    }
+
+    .info {
+        padding: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .poster {
+        height: 240px;
+    }
+
+    .info {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 0.9rem;
+    }
+
+    .rating {
+        font-size: 0.8rem;
+        padding: 3px 6px;
+    }
+
+    .favoriteButton {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 575px) {
+    .poster {
+        height: 200px;
+    }
+
+    .info {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 0.85rem;
+        -webkit-line-clamp: 2;
+    }
+
+    .year {
+        font-size: 0.8rem;
+    }
+
+    .rating {
+        font-size: 0.75rem;
+        padding: 2px 5px;
+    }
+
+    .favoriteButton {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .poster {
+        height: 180px;
+    }
+
+    .info {
+        padding: 8px;
+    }
+
+    .title {
+        font-size: 0.8rem;
+    }
+
+    .year {
+        font-size: 0.75rem;
+    }
+
+    .favoriteButton {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+    }
 }

@@ -37,3 +37,98 @@
     grid-template-columns: repeat(6, 1fr);;
     gap: 16px;
 }
+
+@media (max-width: 1200px) {
+    .moviesGrid {
+        grid-template-columns: repeat(3, minmax(180px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .section {
+        margin-bottom: 50px;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+        gap: 18px;
+    }
+
+    .skeletonPoster {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+        gap: 16px;
+    }
+
+    .skeletonPoster {
+        height: 240px;
+    }
+}
+
+@media (max-width: 575px) {
+    .section {
+        margin-bottom: 30px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .viewMoreButton {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(1, minmax(180px, 1fr));
+        gap: 12px;
+    }
+
+    .skeletonPoster {
+        height: 200px;
+    }
+
+    .skeletonTitle {
+        height: 18px;
+    }
+
+    .skeletonRating {
+        height: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .moviesGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .skeletonPoster {
+        height: 250px;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+}

@@ -1,5 +1,4 @@
 :root {
-  /* Светлая тема */
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --text-primary: #333333;
@@ -16,7 +15,6 @@
 }
 
 [data-theme="dark"] {
-  /* Темная тема */
   --bg-primary: #0d253f;
   --bg-secondary: #1c3b5e;
   --text-primary: #ffffff;

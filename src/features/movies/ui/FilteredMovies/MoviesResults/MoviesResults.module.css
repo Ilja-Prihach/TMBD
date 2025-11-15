@@ -15,11 +15,78 @@
 .loading, .error, .noResults {
     text-align: center;
     padding: 60px 20px;
-    font-size: 1.125rem;
+    font-size: 18px;
     color: var(--text-secondary);
 }
 
 .noResults h3 {
     color: var(--text-primary);
     margin-bottom: 8px;
+}
+
+@media (max-width: 1200px) {
+    .moviesGrid {
+        grid-template-columns: repeat(3, minmax(180px, 1fr));
+        gap: 18px;
+    }
+}
+
+@media (max-width: 991px) {
+    .moviesGrid {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .loading, .error, .noResults {
+        padding: 50px 18px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    .moviesGrid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .loading, .error, .noResults {
+        padding: 40px 16px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 575px) {
+    .moviesGrid {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .loading, .error, .noResults {
+        padding: 32px 12px;
+        font-size: 15px;
+    }
+
+    .noResults h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 375px) {
+    .moviesGrid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .loading, .error, .noResults {
+        padding: 24px 8px;
+        font-size: 14px;
+    }
+
+    .noResults h3 {
+        font-size: 16px;
+    }
 }

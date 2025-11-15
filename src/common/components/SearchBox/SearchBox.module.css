@@ -1,5 +1,7 @@
+/* SearchBox.module.css */
 .searchForm {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .searchBox {
@@ -9,6 +11,7 @@
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .searchBox:focus-within {
@@ -16,11 +19,18 @@
     transform: translateY(-2px);
 }
 
-.searchInput {
+.inputWrapper {
+    position: relative;
     flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    width: 100%;
     border: none;
-    padding: 15px 20px;
-    font-size: 1rem;
+    padding: 15px 50px 15px 20px;
+    font-size: 16px;
     outline: none;
     color: #333333;
     background: white;
@@ -35,11 +45,13 @@
     color: white;
     border: none;
     padding: 15px 30px;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
+    min-width: 120px;
+    flex-shrink: 0;
 }
 
 .searchButton:hover:not(:disabled) {
@@ -58,15 +70,132 @@
 }
 
 .clearButton {
+    position: absolute;
+    right: 130px;
+    top: 50%;
+    transform: translateY(-50%);
     background: transparent;
     border: none;
-    padding: 0 15px;
     font-size: 20px;
     cursor: pointer;
     color: #666;
     transition: color 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 2;
 }
 
 .clearButton:hover {
     color: #333;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 991px) {
+    .searchForm {
+        max-width: 600px;
+    }
+
+    .searchInput {
+        padding: 14px 45px 14px 18px;
+        font-size: 15px;
+    }
+
+    .searchButton {
+        padding: 14px 25px;
+        font-size: 15px;
+        min-width: 110px;
+    }
+
+    .clearButton {
+        right: 120px;
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .searchForm {
+        max-width: 500px;
+    }
+
+    .searchBox {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+
+    .inputWrapper {
+        width: 100%;
+        position: relative;
+    }
+
+    .searchInput {
+        padding: 12px 45px 12px 16px;
+        font-size: 16px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .searchButton {
+        padding: 12px 20px;
+        border-radius: 0 0 12px 12px;
+        min-width: auto;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .clearButton {
+        right: 12px;
+        width: 26px;
+        height: 26px;
+        font-size: 16px;
+        top: 30%;
+        transform: translateY(-50%);
+    }
+}
+
+@media (max-width: 575px) {
+    .searchForm {
+        max-width: 100%;
+    }
+
+    .searchInput {
+        padding: 10px 40px 10px 14px;
+        font-size: 14px;
+    }
+
+    .searchButton {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .clearButton {
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .searchInput {
+        padding: 8px 35px 8px 12px;
+        font-size: 13px;
+    }
+
+    .searchButton {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .clearButton {
+        right: 8px;
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
 }

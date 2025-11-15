@@ -4,6 +4,8 @@ import s from './Header.module.css'
 import {Logo} from "@/common/components/Logo/Logo.tsx";
 import {useAppDispatch, useAppSelector} from "@/app/model/store/hooks.ts";
 import {selectIsDark, toggleTheme} from "@/app/model/store/theme/theme.slice.ts";
+import {BurgerMenu} from "@/common/components/BurgerMenu/BurgerMenu.tsx";
+
 
 const navItems = [
   { to: Path.Main, label: 'Main' },
@@ -25,6 +27,7 @@ export const Header = () => {
       <header className={s.container}>
         <nav>
           <Logo size="medium" />
+
           <ul className={s.list}>
             {navItems.map((item) => (
                 <li key={item.to}>
@@ -37,13 +40,19 @@ export const Header = () => {
                 </li>
             ))}
           </ul>
-          <button
-              className={s.themeToggle}
-              onClick={handleThemeToggle}
-              aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
-          >
-            {isDark ? '☀️' : '🌙'}
-          </button>
+
+          <div className={s.controls}>
+            <button
+                className={s.themeToggle}
+                onClick={handleThemeToggle}
+                aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+            >
+              {isDark ? '☀️' : '🌙'}
+            </button>
+
+            {/* Burger Menu */}
+            <BurgerMenu />
+          </div>
         </nav>
       </header>
   )

@@ -41,3 +41,65 @@
     background: var(--primary-dark);
     transform: translateY(-1px);
 }
+
+
+@media (max-width: 991px) {
+    .filters {
+        padding: 20px;
+    }
+
+    .header {
+        margin-bottom: 20px;
+        padding-bottom: 14px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .resetButton {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters {
+        position: static;
+        padding: 18px;
+    }
+
+    .header {
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+    }
+
+    .title {
+        font-size: 17px;
+    }
+
+    .resetButton {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .filters {
+        padding: 16px;
+    }
+
+    .header {
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .resetButton {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+}

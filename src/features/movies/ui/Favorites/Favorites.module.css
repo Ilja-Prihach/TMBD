@@ -36,3 +36,129 @@
     grid-template-columns: repeat(5, minmax(200px, 1fr));
     gap: 20px;
 }
+
+@media (max-width: 1200px) {
+    .moviesGrid {
+        grid-template-columns: repeat(4, minmax(180px, 1fr));
+        gap: 18px;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        padding: 28px 16px;
+    }
+
+    .title {
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+
+    .count {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+        gap: 16px;
+    }
+
+    .emptyState {
+        padding: 50px 18px;
+    }
+
+    .emptyState p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 24px 12px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .count {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        gap: 16px;
+    }
+
+    .emptyState {
+        padding: 40px 16px;
+    }
+
+    .emptyState p {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .container {
+        padding: 20px 12px;
+    }
+
+    .title {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .count {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .moviesGrid {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .emptyState {
+        padding: 32px 12px;
+    }
+
+    .emptyState p {
+        font-size: 15px;
+        margin: 6px 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        padding: 16px 8px;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .count {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    .moviesGrid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .emptyState {
+        padding: 24px 8px;
+    }
+
+    .emptyState p {
+        font-size: 14px;
+        margin: 4px 0;
+    }
+}

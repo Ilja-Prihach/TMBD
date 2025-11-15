@@ -47,3 +47,77 @@
     color: var(--primary-color);
     background: var(--bg-secondary);
 }
+
+@media (max-width: 991px) {
+    .container {
+        gap: 30px;
+    }
+
+    .social {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .main {
+        justify-content: center;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 575px) {
+    .footer {
+        padding: 15px 20px;
+    }
+
+    .container {
+        gap: 15px;
+    }
+
+    .social {
+        gap: 12px;
+    }
+
+    .social a {
+        font-size: 13px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    .footer {
+        padding: 12px 15px;
+    }
+
+    .main {
+        gap: 15px;
+    }
+
+    .social {
+        gap: 10px;
+    }
+
+    .social a {
+        font-size: 12px;
+    }
+
+    .text {
+        font-size: 11px;
+    }
+}
