@@ -1,8 +1,10 @@
 
 import { useState } from 'react';
-import { NavLink } from 'react-router';
+import {NavLink} from 'react-router';
 import { Path } from '@/common/routing';
 import s from './BurgerMenu.module.css';
+import {MobileUserMenu} from "@/common/components/MobileUserMenu/MobileUserMenu.tsx";
+
 
 const navItems = [
     { to: Path.Main, label: 'Main' },
@@ -53,6 +55,7 @@ export const BurgerMenu = () => {
                                     </NavLink>
                                 </li>
                             ))}
+                            <MobileUserMenu onClose={closeMenu} />
                         </ul>
                     </nav>
                 </div>

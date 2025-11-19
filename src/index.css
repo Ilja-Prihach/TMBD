@@ -28,6 +28,7 @@
   --button-bg: #2d4d6e;
   --card-bg: #1c3b5e;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --error-color: rgb(229, 9, 20);
 }
 
 * {

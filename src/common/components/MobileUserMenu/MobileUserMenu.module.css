@@ -1,0 +1,138 @@
+
+.userSection {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 0 16px 0;
+}
+
+.userAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userDetails {
+    flex: 1;
+}
+
+.userName {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.userEmail {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+}
+
+.userStats {
+    display: flex;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.statNumber {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.statLabel {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.userMenuItems {
+    padding: 8px 0;
+}
+
+.userMenuItem {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 0;
+    text-align: left;
+    cursor: pointer;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.userMenuItem:hover {
+    color: var(--primary-color);
+}
+
+.divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+}
+
+/* Auth Section для неавторизованных */
+.authSection {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.authButtons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.loginButton {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    flex: 1;
+    color: #ffffff;
+}
+
+.loginButton:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.registerButton {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    flex: 1;
+}
+
+.registerButton:hover {
+    background: var(--primary-dark);
+}

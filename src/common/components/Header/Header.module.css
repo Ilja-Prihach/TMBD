@@ -64,6 +64,11 @@ nav {
   border-color: var(--primary-color);
 }
 
+/* Скрываем UserMenu на мобильных */
+.userMenuDesktop {
+  display: block;
+}
+
 @media (max-width: 991px) {
   .container {
     padding: 12px 20px;
@@ -92,6 +97,10 @@ nav {
     min-width: 40px;
     min-height: 40px;
     font-size: 14px;
+  }
+
+  .userMenuDesktop {
+    display: none;
   }
 }
 
