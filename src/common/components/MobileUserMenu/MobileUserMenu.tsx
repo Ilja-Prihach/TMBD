@@ -43,6 +43,15 @@ export const MobileUserMenu = ({ onClose }: MobileUserMenuProps) => {
         onClose();
     };
 
+    const getFavoritesCount = () => {
+        try {
+            const favorites = localStorage.getItem('favoriteMovies');
+            return favorites ? JSON.parse(favorites).length : 0;
+        } catch {
+            return 0;
+        }
+    };
+
     if (!isAuthenticated) {
         return (
             <div className={s.authSection}>
@@ -74,7 +83,7 @@ export const MobileUserMenu = ({ onClose }: MobileUserMenuProps) => {
 
             <div className={s.userStats}>
                 <div className={s.stat}>
-                    <span className={s.statNumber}>{user?.watchlistCount || 0}</span>
+                    <span className={s.statNumber}>{getFavoritesCount()}</span>
                     <span className={s.statLabel}>Favorites</span>
                 </div>
                 <div className={s.stat}>
