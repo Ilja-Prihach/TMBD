@@ -49,6 +49,15 @@ export const UserMenu = () => {
         setIsOpen(false);
     };
 
+    const getFavoritesCount = () => {
+        try {
+            const favorites = localStorage.getItem('favoriteMovies');
+            return favorites ? JSON.parse(favorites).length : 0;
+        } catch {
+            return 0;
+        }
+    };
+
     if (!isAuthenticated) {
         return (
             <div className={s.authButtons}>
@@ -89,7 +98,7 @@ export const UserMenu = () => {
 
                     <div className={s.stats}>
                         <div className={s.stat}>
-                            <span className={s.statNumber}>{user?.watchlistCount || 0}</span>
+                            <span className={s.statNumber}>{getFavoritesCount()}</span>
                             <span className={s.statLabel}>Favorites</span>
                         </div>
                         <div className={s.stat}>
