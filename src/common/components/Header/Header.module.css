@@ -77,6 +77,10 @@ nav {
   nav {
     gap: 24px;
   }
+
+  .userMenuDesktop {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -99,9 +103,7 @@ nav {
     font-size: 14px;
   }
 
-  .userMenuDesktop {
-    display: none;
-  }
+
 }
 
 @media (max-width: 375px) {
