@@ -14,7 +14,7 @@ type CastSectionProps = {
 };
 
 export const CastSection = ({ cast }: CastSectionProps) => {
-    const topCast = cast.slice(0, 6); // Берем топ-6 актеров
+    const topCast = cast.slice(0, 6);
 
     if (topCast.length === 0) {
         return null;

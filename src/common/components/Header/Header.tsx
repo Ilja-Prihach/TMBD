@@ -7,13 +7,15 @@ import {selectIsDark, toggleTheme} from "@/app/model/store/theme/theme.slice.ts"
 import {BurgerMenu} from "@/common/components/BurgerMenu/BurgerMenu.tsx";
 
 import {UserMenu} from "@/common/components/UserMenu/UserMenu.tsx";
+import {Path} from "@/common/routing";
 
 const navItems = [
-  { to: '/', label: 'Main' },
-  { to: '/category/popular', label: 'Category Movies' },
-  { to: '/search', label: 'Search' },
-  { to: '/favorites', label: 'Favorites' },
-];
+  { to: Path.Main, label: 'Main' },
+  { to: Path.CategoryMovies, label: 'Category Movies' },
+  { to: Path.FilteredMovies, label: 'Filtered Movies' },
+  { to: Path.Search, label: 'Search' },
+  { to: Path.Favorites, label: 'Favorites' },
+]
 
 export const Header = () => {
   const location = useLocation();
