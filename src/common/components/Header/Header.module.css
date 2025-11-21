@@ -78,6 +78,10 @@ nav {
     gap: 24px;
   }
 
+  .list {
+    display: none;
+  }
+
   .userMenuDesktop {
     display: none;
   }
@@ -88,9 +92,7 @@ nav {
     padding: 10px 16px;
   }
 
-  .list {
-    display: none;
-  }
+
 
   .controls {
     gap: 12px;
